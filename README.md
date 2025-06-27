@@ -6,6 +6,7 @@ Next steps:
 - More robust and comprehensive unit testing
 - Benchmarking
 - Cythonization
+- Leaf operations
 
 # SuccinctTree
 

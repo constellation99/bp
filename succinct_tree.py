@@ -652,6 +652,8 @@ class SuccinctTree:
             total = self._mincount_bucket_range(bi + 1, bj - 1, target)
             if q <= total:
                 k = self._minselect_bucket_range(bi + 1, bj - 1, target, q)
+                if k is None:
+                    return None
                 prev = self._mincount_bucket_range(bi + 1, k - 1, target)
                 q   -= prev
                 p = self.buckets[k].minselect_in_bucket(

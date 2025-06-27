@@ -26,6 +26,8 @@ def benchmark_bp(bp: str, num_ops: int) -> dict:
     build_cpu  = time.process_time()  - t0c
     mem1       = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
 
+    print(f"[build] n={n:>8}  wall={build_wall:.4f}s  cpu={build_cpu:.4f}s  rss={mem1-mem0}KB")
+
     # prepare some random queries
     idxs   = [random.randrange(n) for _ in range(num_ops)]
     ranges = [(random.randrange(n), random.randrange(n)) for _ in range(num_ops)]

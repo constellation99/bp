@@ -1,6 +1,11 @@
 # bp
 
-Implementation of Navarro and Cordova's "Simple and Efficient Fully-Functional Succinct Trees" (2018). Builds off of biocore's [improved-octo-waddle](https://github.com/biocore/improved-octo-waddle/tree/master).
+Implementation of Navarro and Cordova's "Simple and Efficient Fully-Functional Succinct Trees" (2018). Builds off of biocore's [improved-octo-waddle](https://github.com/biocore/improved-octo-waddle/tree/master). Work in progress. 
+
+Next steps:
+- More robust and comprehensive unit testing
+- Benchmarking
+- Cythonization
 
 # SuccinctTree
 
@@ -13,6 +18,9 @@ A **SuccinctTree** implementation in Python that efficiently supports all common
 - **Traversal Orders**: `preorder`, `postorder`, `preorderselect`, `postorderselect` in O(1) or O(log log n).
 - **Tree Queries**: `depth`, `height`, `degree`, `subtree`, `lca`, `deepestnode`, `ntips` in O(log log n).
 - **Level Operations**: `levelancestor`, `levelnext`, `levelprev`, `levelleftmost`, `levelrightmost` in O(log log n).
+
+- `'('` (or `1`) marks an **opening** parenthesis for a node.
+- `')'` (or `0`) marks a **closing** parenthesis for a node.
 
 > **Dependencies**: `numpy`, `sdsl4py` (for succinct bitvector support).
 

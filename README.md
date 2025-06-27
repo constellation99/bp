@@ -4,8 +4,8 @@ Implementation of Navarro and Cordova's "Simple and Efficient Fully-Functional S
 
 Next steps:
 - More robust and comprehensive unit testing
-- Benchmarking
-- Cythonization
+- More extensive benchmarking
+- Convert to Cython
 - Leaf operations
 
 # SuccinctTree

@@ -3,6 +3,7 @@
 Implementation of Navarro and Cordova's "Simple and Efficient Fully-Functional Succinct Trees" (2018). Builds off of biocore's [improved-octo-waddle](https://github.com/biocore/improved-octo-waddle/tree/master). Work in progress. 
 
 Next steps:
+- Check that my implementation aligns with paper
 - More robust and comprehensive unit testing
 - More extensive benchmarking
 - Convert to Cython

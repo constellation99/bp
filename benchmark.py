@@ -56,7 +56,6 @@ def benchmark(pairs: int, num_ops: int):
     opens = [i for i, b in enumerate(tree.B) if b == 1]
     closes = [c for i in opens if (c := tree.close(i)) is not None]
 
-
     results = {
         # "depth": depth,
         "pairs":      pairs,

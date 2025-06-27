@@ -641,8 +641,11 @@ class SuccinctTree:
                                                     self.buckets[bi].n - 1,
                                                     target)
         if q <= left_cnt:
-            return bi * self.beta + self.buckets[bi].minselect_in_bucket(
+            p = self.buckets[bi].minselect_in_bucket(
                 offi, self.buckets[bi].n - 1, target, q)
+            if p is None:
+                return None
+            return bi * self.beta + p
         q -= left_cnt
 
         if bj > bi + 1:
@@ -651,14 +654,20 @@ class SuccinctTree:
                 k = self._minselect_bucket_range(bi + 1, bj - 1, target, q)
                 prev = self._mincount_bucket_range(bi + 1, k - 1, target)
                 q   -= prev
-                return k * self.beta + self.buckets[k].minselect_in_bucket(
+                p = self.buckets[k].minselect_in_bucket(
                     0, self.buckets[k].n - 1, target, q)
+                if p is None:
+                    return None
+                return k * self.beta + p
             q -= total
 
         right_cnt = self.buckets[bj].mincount_in_bucket(0, offj, target)
         if q <= right_cnt:
-            return bj * self.beta + self.buckets[bj].minselect_in_bucket(
+            p = self.buckets[bj].minselect_in_bucket(
                 0, offj, target, q)
+            if p is None:
+                return None
+            return bj * self.beta + p
         return None            # q out of range
 
     # ----------------------------------------------------------------------

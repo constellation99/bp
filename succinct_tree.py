@@ -503,7 +503,7 @@ class SuccinctTree:
             k = self._first_bucket_leq(k + 1, tgt)
 
         if k is not None:
-            p2 = self.buckets[k].fwdsearch_in_bucket(-1, tgt)
+            p2 = self.buckets[k].fwdsearch_in_bucket(0, tgt)
             if p2 is not None:
                 return k * self.beta + p2
         return None
@@ -560,9 +560,8 @@ class SuccinctTree:
         # -------------------------------------------------------------
         # 4) final in-bucket backward search (≤ b bits)
         # -------------------------------------------------------------
-        p2 = self.buckets[k].bwdsearch_in_bucket(self.buckets[k].n, tgt)
+        p2 = self.buckets[k].bwdsearch_in_bucket(self.buckets[k].n - 1, tgt)
         return k * self.beta + p2 if p2 is not None else None
-
 
     def _mincount_naive(self, i, j, target):
         """Scan excess from i→j in O(j-i) time."""

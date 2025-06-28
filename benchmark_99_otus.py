@@ -119,3 +119,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# Usage:
+# chmod +x benchmark_99_otus.py
+# /usr/bin/time -v python3 benchmark_99_otus.py 99_otus.tree --queries 10000
+
+
+# TODO: Randomly query close, open, and enclose

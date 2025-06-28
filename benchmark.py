@@ -136,5 +136,6 @@ if __name__ == "__main__":
     main()
 
 
+# Usage:
 # chmod +x benchmark.py
 # /usr/bin/time -v python3 benchmark.py --pairs 100000 250000 500000 1000000 --queries 10000
